@@ -1,0 +1,206 @@
+\documentclass[twoside]{report}
+\usepackage[inner=1cm,outer=2cm, top=1cm, bottom=2cm]{geometry} %left=4cm,right=2cm would be equivalent
+\usepackage{tikz}
+\usepackage{geometry}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{lipsum}
+
+\newcommand{\frontpage}{sample5.jpg}
+\newcommand{\bannerpic}{banner.png}
+\newcommand{\tocpic}{sample9.jpg}
+\newcommand{\notespic}{sample10.jpg}
+\newcommand{\backcoverpic}{sample2.jpg}
+
+
+
+
+
+\newcommand{\mealtoA}{Basic Grilled Chicken}
+\newcommand{\mealtoAstats}{%
+    \begin{itemize}[label={}]
+    \item Prep Time: 0:05:00
+    \item Cook Time: 0:30:00
+    \item Yield: 6 Servings
+    \end{itemize}
+    }
+\newcommand{\mealtoAing}{%3 Chicken Breasts
+2 Tbsp Olive Oil
+Salt to taste
+Pepper to taste
+    }
+\newcommand{\mealtoAprep}{Preheat grilling surface to medium-low temperature.
+
+Wash and clean chicken breasts as needed.  Combine chicken breasts, oil, and spices in zip lock bag.  Seal bag and gently shake to cover chicken.
+
+Remove chicken from bag and place on grilling surface.  Cover and grill on low for 7 - 10 minutes.  Flip chicken and continue grilling while covered for an additional 7 minutes.  Remove chicken from heat when fully cooked.  Be cautious not to over cook meat as it will dry.}
+\newcommand{\mealtoApicone}{sample7.jpg}
+\newcommand{\mealtoApictwo}{sample8.jpg}
+
+
+\newcommand{\mealtoB}{Grilled Pineapple}
+\newcommand{\mealtoBstats}{%
+    \begin{itemize}[label={}]
+    \item Prep Time: 10 min
+    \item Cook Time: 15 min
+    \item Yield: 8 Servings
+    \end{itemize}
+    }
+\newcommand{\mealtoBing}{%For the marinade: 
+2 tbsp dark honey
+1 tsp olive oil
+1 tbsp fresh lime juice
+1 tsp ground cinnamon
+
+1 ripe pineapple, cut into half inch slices
+    }
+\newcommand{\mealtoBprep}{In a small bowl, combine the honey, olive oil, lime juice, and cinnamon and whisk to blend. Set aside.
+
+Prepare a hot fire in a charcoal grill or heat a gas grill. Lightly coat the grill rack with cooking spray. Position the cooking rack 4 to 6 inches from the flame.
+
+Lightly brush the pineapple with the marinade. Grill or broil, turning once and basting once or twice with the remaining marinade, until tender and golden, about 3-5 minutes on each side.
+
+Serve warm.}
+\newcommand{\mealtoBpicone}{sample2.jpg}
+\newcommand{\mealtoBpictwo}{sample9.jpg}
+
+\newcommand{\topeat}{%
+\textbf{ }
+\vfill
+}
+
+%\pagenumbering{gobble}
+
+\makeatletter
+\def\@makechapterhead#1{%
+  \vspace*{50\p@}%
+  {\parindent \z@ \raggedright \normalfont
+    % \ifnum \c@secnumdepth >\m@ne
+    % \fi
+    % \interlinepenalty\@M
+    % \Huge \bfseries #1\par\nobreak
+    % \vskip 40\p@
+  }}
+\makeatother
+
+\begin{document}
+ \thispagestyle{empty}
+%%%%%%%%%%%%%%%%%%%%
+%
+%  Front Page
+%
+%%%%%%%%%%%%%%%%%%%%
+%Set the background image(s) for the page
+\tikz[remember picture,overlay] \node[opacity=0.8,inner sep=0pt] at (current page.center){\includegraphics[width=\paperwidth,height=\paperheight]{\frontpage}};
+
+\tikz[remember picture,overlay] \node[opacity=0.8,inner sep=0pt] at (16,-1){\includegraphics[width=9cm,height=1.2cm]{\bannerpic}};
+
+\tikz[remember picture,overlay] \node[opacity=0.8,inner sep=0pt] at (9.3,-23.5){\includegraphics[width=23cm,height=4.7cm]{\bannerpic}};
+
+%Add Header
+\begin{flushright} 
+    {\Large\textcolor{white}{\textbf{\today}}}
+\end{flushright}
+\vfill
+
+%Add Footer
+\noindent\textcolor{white}{\textbf{DISCLAIMER: Consuming raw or undercooked meats, poultry, seafood, shellfish, or eggs may increase your risk of foodborne illness, especially if you have a medical condition.}}\medskip
+
+\noindent\textcolor{white}{\textbf{This work is licensed under the Creative Commons Attribution NonCommercial ShareAlike 4.0 International License. To view a copy of this license, visit url}}
+
+
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%
+%
+%  Table of Contents
+%
+%%%%%%%%%%%%%%%%%%%%
+\tableofcontents
+%Set the background image(s) for the page
+\tikz[remember picture,overlay] \node[opacity=0.3,inner sep=0pt] at (current page.center){\includegraphics[width=\paperwidth,height=\paperheight]{\tocpic}};
+
+\clearpage
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%
+%
+%  Basic Grilled Chicken
+%
+%%%%%%%%%%%%%%%%%%%%
+%Set the background image(s) for the page
+\tikz[remember picture,overlay] \node[opacity=0.3,inner sep=0pt] at (current page.center){\includegraphics[width=\paperwidth,height=\paperheight]{\mealtoApicone}};
+
+\section{\mealtoA}
+\begin{multicols}{2}
+\noindent\textbf{Stats:}
+\mealtoAstats
+
+\noindent\textbf{Ingredients:}
+\mealtoAing
+\vfill
+    
+\noindent\textbf{Preparation:}\\
+\mealtoAprep
+\end{multicols}
+
+\clearpage
+
+
+%%%%%%%%%%%%%%%%%%%%
+%
+%  Grilled Pineapple
+%
+%%%%%%%%%%%%%%%%%%%%
+%Set the background image(s) for the page
+\tikz[remember picture,overlay] \node[opacity=0.3,inner sep=0pt] at (current page.center){\includegraphics[width=\paperwidth,height=\paperheight]{\mealtoBpicone}};
+\topeat
+
+\section{\mealtoB}
+\begin{multicols}{2}
+\noindent\textbf{Stats:}
+\mealtoBstats
+
+\noindent\textbf{Ingredients:}
+\mealtoBing
+\vfill
+    
+\noindent\textbf{Preparation:}\\
+\mealtoBprep
+\end{multicols}
+
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%
+%
+%  Notes
+%
+%%%%%%%%%%%%%%%%%%%%
+\chapter{Personal Notes}
+%Set the background image(s) for the page
+\tikz[remember picture,overlay] \node[opacity=0.3,inner sep=0pt] at (current page.center){\includegraphics[width=\paperwidth,height=\paperheight]{\notespic}};
+
+\noindent{\Huge{Personal Notes:}}\medskip
+
+\clearpage
+%Set the background image(s) for the page
+\tikz[remember picture,overlay] \node[opacity=0.3,inner sep=0pt] at (current page.center){\includegraphics[width=\paperwidth,height=\paperheight]{\notespic}};
+
+\clearpage
+%Set the background image(s) for the page
+\tikz[remember picture,overlay] \node[opacity=0.3,inner sep=0pt] at (current page.center){\includegraphics[width=\paperwidth,height=\paperheight]{\notespic}};
+
+%%%%%%%%%%%%%%%%%%%%
+%
+%  Back Cover
+%
+%%%%%%%%%%%%%%%%%%%%
+\thispagestyle{empty}
+%Set the background image(s) for the page
+\tikz[remember picture,overlay] \node[opacity=0.8,inner sep=0pt] at (current page.center){\includegraphics[width=\paperwidth,height=\paperheight]{\backcoverpic}};
+
+\clearpage
+\end{document}
